@@ -1,0 +1,152 @@
+Loading datasets...
+AQI records: 425,971
+Disease records: 26,553
+Vehicle records: 199,552
+
+======================================================================
+Q1: TOP 5 AND BOTTOM 5 AREAS BY AVERAGE AQI (Dec 2024 - May 2025)
+======================================================================
+
+[WORST] TOP 5 AREAS (HIGHEST AQI):
+   Byrnihat                       | Avg AQI: 265.3 | Data points: 139
+   Delhi                          | Avg AQI: 227.0 | Data points: 181
+   Hajipur                        | Avg AQI: 217.1 | Data points: 166
+   Gurugram                       | Avg AQI: 197.0 | Data points: 177
+   Rohtak                         | Avg AQI: 188.3 | Data points: 58
+
+[BEST] BOTTOM 5 AREAS (LOWEST AQI):
+   Tirunelveli                    | Avg AQI: 33.2 | Data points: 155
+   Madikeri                       | Avg AQI: 40.2 | Data points: 171
+   Palkalaiperur                  | Avg AQI: 40.7 | Data points: 136
+   Thanjavur                      | Avg AQI: 44.3 | Data points: 138
+   Chamarajanagar                 | Avg AQI: 44.9 | Data points: 155
+
+======================================================================
+Q2: TOP 2 AND BOTTOM 2 POLLUTANTS FOR SOUTHERN STATES (2022+)
+======================================================================
+
+[STATE] Karnataka:
+   Top 2 pollutants:    PM10 (16231), CO (3646)
+   Bottom 2 pollutants: NH3 (34), SO3 (1)
+
+[STATE] Tamil Nadu:
+   Top 2 pollutants:    PM10 (8159), PM2.5 (3282)
+   Bottom 2 pollutants: NO2 (511), NH3 (11)
+
+[STATE] Kerala:
+   Top 2 pollutants:    PM10 (3989), PM2.5 (1678)
+   Bottom 2 pollutants: NH3 (10), SO2 (8)
+
+[STATE] Andhra Pradesh:
+   Top 2 pollutants:    PM10 (3964), PM2.5 (2599)
+   Bottom 2 pollutants: NO2 (263), SO2 (11)
+
+[STATE] Telangana:
+   Top 2 pollutants:    PM10 (1130), PM2.5 (706)
+   Bottom 2 pollutants: CO (177), NO2 (129)
+
+[STATE] Puducherry:
+   Top 2 pollutants:    PM10 (481), O3 (339)
+   Bottom 2 pollutants: PM2.5 (222), CO (153)
+
+======================================================================
+Q3: AQI WEEKENDS VS WEEKDAYS IN METRO CITIES (Last 1 Year)
+======================================================================
+
+[PERIOD] 2024-06-19 to 2025-06-19
+
+City                 | Weekday Avg  | Weekend Avg  | Difference   | Better On 
+----------------------------------------------------------------------
+Delhi                |      202.4 |      193.4 |        9.1 | Weekend   
+Mumbai               |       89.5 |       92.5 |        3.0 | Weekday   
+Chennai              |       71.4 |       67.6 |        3.7 | Weekend   
+Kolkata              |       90.9 |       91.3 |        0.4 | Weekday   
+Bengaluru            |       72.2 |       72.6 |        0.4 | Weekday   
+Hyderabad            |       78.6 |       79.5 |        0.9 | Weekday   
+Ahmedabad            |      110.0 |      113.3 |        3.2 | Weekday   
+Pune                 |      100.2 |       99.7 |        0.5 | Weekend   
+----------------------------------------------------------------------
+OVERALL              |      101.9 |      101.2 |        0.7 | Weekend   
+
+======================================================================
+Q4: MONTHS WITH WORST AIR QUALITY (Top 10 States by Distinct Areas)
+======================================================================
+
+Rank   | Month           | Avg AQI   
+----------------------------------------
+[BAD] 1  | November        | 182.5
+[BAD] 2  | December        | 174.4
+[BAD] 3  | January         | 167.0
+[MED] 4  | February        | 139.8
+[MED] 5  | October         | 125.5
+[MED] 6  | March           | 123.3
+[GOOD] 7  | April           | 122.7
+[GOOD] 8  | May             | 112.4
+[GOOD] 9  | June            | 97.8
+[GOOD] 10 | September       | 71.3
+[GOOD] 11 | July            | 68.8
+[GOOD] 12 | August          | 66.9
+
+[INFO] Top 10 states analyzed: Rajasthan, Maharashtra, Karnataka, Tamil Nadu, Haryana, Bihar, Uttar Pradesh, Odisha, Madhya Pradesh, Andhra Pradesh
+
+======================================================================
+Q5: BENGALURU - DAYS BY AIR QUALITY CATEGORY (Mar-May 2025)
+======================================================================
+
+Category             | Days       | Percentage
+---------------------------------------------
+Satisfactory         | 74         | 80.4%
+Moderate             | 13         | 14.1%
+Good                 | 5          | 5.4%
+
+Total days analyzed: 92
+
+======================================================================
+Q6: TOP 2 DISEASE OUTBREAKS PER STATE WITH AVERAGE AQI (Last 3 Years)
+======================================================================
+
+State                | Top Disease #1            | Top Disease #2            | Avg AQI   
+------------------------------------------------------------------------------------------
+Assam                | Acute Diarrheal Disease   | Food Poisoning            | 114.0     
+Bihar                | Acute Diarrheal Disease   | Fever with Rash           | 149.8     
+Gujarat              | Acute Diarrheal Disease   | Food Poisoning            | 107.2     
+Haryana              | Cholera                   | Acute Diarrheal Disease   | 136.8     
+Jharkhand            | Malaria                   | Acute Diarrheal Disease   | 162.1     
+Karnataka            | Acute Diarrheal Disease   | Cholera                   | 62.9      
+Kerala               | Food Poisoning            | Acute Diarrheal Disease   | 68.8      
+Madhya Pradesh       | Acute Diarrheal Disease   | Dengue                    | 107.5     
+Meghalaya            | Measles                   | Typhoid                   | 72.0      
+Odisha               | Acute Diarrheal Disease   | Cholera                   | 121.7     
+
+======================================================================
+Q7: TOP 5 EV ADOPTION STATES VS LOW EV STATES - AQI COMPARISON
+======================================================================
+
+[HIGH EV] TOP 5 EV ADOPTION STATES:
+State                     | EV Registrations     | Avg AQI   
+------------------------------------------------------------
+Uttar Pradesh             |          1,068,356 | 159.5     
+Maharashtra               |            549,353 | 103.7     
+Karnataka                 |            443,677 | 64.3      
+Delhi                     |            343,233 | 215.9     
+Bihar                     |            319,195 | 165.9     
+
+[LOW EV] BOTTOM 5 EV ADOPTION STATES:
+State                     | EV Registrations     | Avg AQI   
+------------------------------------------------------------
+Ladakh                    |                 92 | N/A       
+Arunachal Pradesh         |                 78 | 59.9      
+Nagaland                  |                 62 | 79.1      
+Lakshadweep               |                 29 | N/A       
+Sikkim                    |                 11 | 53.5      
+
+[SUMMARY] COMPARISON:
+   Average AQI in Top 5 EV states:    141.9
+   Average AQI in Bottom 5 EV states: 64.1
+   [WARN] High EV adoption states have 77.7 points WORSE air quality
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================
+
+These results can be cross-verified with the Power BI dashboard.
