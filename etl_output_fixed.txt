@@ -1,0 +1,10 @@
+============================================================
+Traceback (most recent call last):
+  File "D:\FEB_AQI_P2\scripts\python\etl_aqi_data_fixed.py", line 507, in <module>
+    main()
+  File "D:\FEB_AQI_P2\scripts\python\etl_aqi_data_fixed.py", line 452, in main
+    print("\U0001f680 AirPure Innovations - AQI Analytics ETL (FIXED)")
+  File "C:\Program Files\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f680' in position 0: character maps to <undefined>

@@ -1,0 +1,15 @@
+================================================================================
+DATA VERIFICATION REPORT
+================================================================================
+Table Name                |     Source Rows |         DB Rows |     Status
+--------------------------------------------------------------------------------
+aqi_daily                 |         425,971 |         425,971 |      MATCH
+disease_outbreak          |          26,556 |          26,553 |   MISMATCH
+vehicle_registration      |         199,552 |         199,552 |      MATCH
+population                |           8,892 |           8,892 |      MATCH
+================================================================================
+
+[WARNING] Some tables have mismatched counts. Please review.
+
+Database: airpure_aqi_db
+Tables: aqi_daily, disease_outbreak, vehicle_registration, population
