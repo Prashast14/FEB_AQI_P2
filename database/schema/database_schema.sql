@@ -153,7 +153,7 @@ CREATE TABLE fact_vehicle_registration (
 -- =====================================================
 
 -- Insert Pollutant Reference Data
-INSERT INTO dim_pollutant (pollutant_code, pollutant_name, pollutant_category, health_impact) VALUES
+INSERT IGNORE INTO dim_pollutant (pollutant_code, pollutant_name, pollutant_category, health_impact) VALUES
 ('PM2.5', 'Particulate Matter 2.5', 'Particulate Matter', 'Respiratory issues, heart disease, lung cancer'),
 ('PM10', 'Particulate Matter 10', 'Particulate Matter', 'Respiratory issues, asthma'),
 ('O3', 'Ozone', 'Gas', 'Respiratory issues, reduced lung function'),

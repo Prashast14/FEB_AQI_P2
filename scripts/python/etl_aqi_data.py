@@ -20,8 +20,8 @@ warnings.filterwarnings('ignore')
 # Database connection parameters
 DB_CONFIG = {
     'host': 'localhost',
-    'user': 'root',  # Change if different
-    'password': '',  # UPDATE THIS WITH YOUR MYSQL PASSWORD
+    'user': 'root',
+    'password': 'admin',  # MySQL password
     'database': 'airpure_aqi_db',
     'port': 3306
 }
@@ -66,10 +66,14 @@ TIER2_CITIES = ['Jaipur', 'Lucknow', 'Kanpur', 'Nagpur', 'Indore', 'Bhopal',
 # Database Connection
 # =====================================================
 
-def create_db_engine():
+def create_db_engine(use_database=True):
     """Create SQLAlchemy engine for database connection"""
     try:
-        connection_string = f"mysql+pymysql://{DB_CONFIG['user']}:{DB_CONFIG['password']}@{DB_CONFIG['host']}:{DB_CONFIG['port']}/{DB_CONFIG['database']}"
+        if use_database:
+            connection_string = f"mysql+pymysql://{DB_CONFIG['user']}:{DB_CONFIG['password']}@{DB_CONFIG['host']}:{DB_CONFIG['port']}/{DB_CONFIG['database']}"
+        else:
+            # Connect without specifying database (for initial setup)
+            connection_string = f"mysql+pymysql://{DB_CONFIG['user']}:{DB_CONFIG['password']}@{DB_CONFIG['host']}:{DB_CONFIG['port']}"
         engine = create_engine(connection_string, echo=False)
         print("✅ Database connection established successfully!")
         return engine
@@ -77,19 +81,38 @@ def create_db_engine():
         print(f"❌ Error connecting to database: {e}")
         return None
 
-def execute_sql_file(engine, sql_file_path):
-    """Execute SQL file to create schema"""
+def execute_sql_file_with_pymysql(sql_file_path):
+    """Execute SQL file using direct pymysql connection"""
     try:
+        # Create direct pymysql connection
+        connection = pymysql.connect(
+            host=DB_CONFIG['host'],
+            user=DB_CONFIG['user'],
+            password=DB_CONFIG['password'],
+            port=DB_CONFIG['port']
+        )
+        
+        cursor = connection.cursor()
+        
+        # Read SQL file
         with open(sql_file_path, 'r', encoding='utf-8') as file:
             sql_script = file.read()
         
         # Split by semicolon and execute each statement
         statements = [stmt.strip() for stmt in sql_script.split(';') if stmt.strip()]
         
-        with engine.connect() as conn:
-            for stmt in statements:
-                if stmt and not stmt.startswith('--'):
-                    conn.execute(stmt)
+        for stmt in statements:
+            if stmt and not stmt.startswith('--') and stmt.upper() != 'SELECT':
+                try:
+                    cursor.execute(stmt)
+                except Exception as e:
+                    # Skip SELECT statements and other non-critical errors
+                    if 'SELECT' not in stmt.upper():
+                        print(f"⚠️ Warning executing statement: {e}")
+        
+        connection.commit()
+        cursor.close()
+        connection.close()
         
         print(f"✅ SQL schema executed successfully from {sql_file_path}")
         return True
@@ -416,18 +439,21 @@ def main():
     print("🚀 AirPure Innovations - AQI Analytics ETL")
     print("="*60)
     
-    # Create database engine
-    engine = create_db_engine()
-    if not engine:
-        print("❌ Failed to create database engine. Exiting.")
-        return
-    
-    # Execute schema SQL
+    # Execute schema SQL to create database and tables using pymysql
     schema_file = r'd:\FEB_AQI_P2\database\schema\database_schema.sql'
     print(f"\n📂 Executing schema from: {schema_file}")
     
-    if not execute_sql_file(engine, schema_file):
+    if not execute_sql_file_with_pymysql(schema_file):
         print("❌ Failed to execute schema. Exiting.")
+        return
+    
+    print("\n✅ Database and tables created successfully!")
+    
+    # Now connect to the newly created database
+    print(f"\n🔌 Connecting to database: {DB_CONFIG['database']}...")
+    engine = create_db_engine(use_database=True)
+    if not engine:
+        print("❌ Failed to connect to new database. Exiting.")
         return
     
     try:
