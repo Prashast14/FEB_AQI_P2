@@ -1,0 +1,12 @@
+# MySQL Database Configuration
+# Update these values with your MySQL credentials
+
+[database]
+host = localhost
+port = 3306
+user = root
+password = YOUR_MYSQL_PASSWORD_HERE
+database = airpure_aqi_db
+
+[paths]
+data_directory = d:\FEB_AQI_P2\AQI_dataset_Original\Dataful_Datasets
