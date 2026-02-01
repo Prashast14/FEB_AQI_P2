@@ -1,0 +1,64 @@
+# Power BI Files
+*.pbix.tmp
+*.pbit.tmp
+
+# Database Backups
+*.bak
+*.sql.gz
+*.dump
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+pip-log.txt
+.pytest_cache/
+
+# Data Files (large)
+*.csv
+*.xlsx
+*.xls
+# Uncomment to track specific data files
+# !data/sample/*.csv
+
+# Logs
+*.log
+logs/
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# Credentials and Secrets
+.env
+config/credentials.json
+config/secrets.json
+*.key
+*.pem
+
+# MySQL
+*.sql~
+*.mysql
+
+# Exports (optional - comment out if you want to track exports)
+# data/exports/*.pdf
+# data/exports/*.xlsx
